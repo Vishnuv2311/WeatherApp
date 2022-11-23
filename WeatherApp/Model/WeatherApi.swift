@@ -15,7 +15,6 @@ class WeatherApi{
     
     enum Endpoints{
         static  let OpenWeatherMapURL = "https://api.openweathermap.org"
-        static  let OpenWeatherMapImageURL = "https://openweathermap.org"
         
         case getCityWeather(String)
         
@@ -26,11 +25,11 @@ class WeatherApi{
             switch self {
                 
             case .getLocationWeather(let latitude, let longitude):
-                var urlComps = URLComponents(string: Endpoints.OpenWeatherMapURL + "/data/2.5/onecall")
+                var urlComps = URLComponents(string: Endpoints.OpenWeatherMapURL + "/data/2.5/weather")
                 let queryParams = [
                     URLQueryItem(name: "lat", value: "\(latitude)"),
                     URLQueryItem(name: "lon", value: "\(longitude)"),
-                    URLQueryItem(name: "exclude", value: "minutely,daily"),
+                    URLQueryItem(name: "units", value: "metric"),
                     URLQueryItem(name: "appid", value: API_KEY)
                 ]
                 urlComps?.queryItems = queryParams
@@ -39,7 +38,7 @@ class WeatherApi{
                 return url
                 
             case .getCityWeather(let cityName):
-                var urlComps = URLComponents(string: Endpoints.OpenWeatherMapURL + "/data/2.5/onecall")
+                var urlComps = URLComponents(string: Endpoints.OpenWeatherMapURL + "/data/2.5/weather")
                 let queryParams = [
                     URLQueryItem(name: "q", value: cityName),
                     URLQueryItem(name: "appid", value: API_KEY),
@@ -97,6 +96,18 @@ class WeatherApi{
             }
         }
     }
+    
+    class func getCityWeather(cityName:String, completion: @escaping (WeatherResponse?, Error?) -> Void) -> Void {
+        let url = Endpoints.getCityWeather(cityName).url
+        
+        taskForGETRequest(url: url, responseType: WeatherResponse.self) { response, error in
+            if let response = response {
+                completion(response, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
         
         
     }
@@ -107,37 +118,7 @@ class WeatherApi{
    
 
     
-    func  getWeatherIcon(condition:Int) -> String{
-      if (condition < 300) {
-        return "🌩"
-      } else if (condition < 400) {
-        return "🌧"
-      } else if (condition < 600) {
-        return "☔️";
-      } else if (condition < 700) {
-          return "☃️"
-      } else if (condition < 800) {
-          return "🌫"
-      } else if (condition == 800) {
-          return "☀️"
-      } else if (condition <= 804) {
-          return "☁️"
-      } else {
-          return "🤷‍"
-      }
-    }
-    
-    func getMessage( temp:Int) ->String{
-      if (temp > 25) {
-          return "It's 🍦 time"
-      } else if (temp > 20) {
-          return "Time for shorts and 👕"
-      } else if (temp < 10) {
-          return "You'll need 🧣 and 🧤"
-      } else {
-          return "Bring a 🧥 just in case"
-      }
-    }
 
-}
+
+
 
