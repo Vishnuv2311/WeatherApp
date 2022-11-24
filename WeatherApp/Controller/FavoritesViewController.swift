@@ -17,6 +17,13 @@ class FavoritesViewController: UIViewController {
     var persistentContainer: NSPersistentContainer!
     
     var favoriteCellPath: IndexPath? = nil
+    
+    @IBOutlet weak var searchBtn: UIButton!
+    @IBOutlet weak var cityNameTextField: UITextField!
+    
+    @IBOutlet weak var recentSearchTable: UITableView!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +38,7 @@ class FavoritesViewController: UIViewController {
         
         fetchRechtLocations()
 
-        // Do any additional setup after loading the view.
     }
-    
-    @IBOutlet weak var searchBtn: UIButton!
-    @IBOutlet weak var cityNameTextField: UITextField!
-    
-    @IBOutlet weak var recentSearchTable: UITableView!
     
     @IBAction func getWeatherPress(_ sender: Any) {
         if(cityNameTextField.text?.isEmpty == true){
@@ -47,16 +48,6 @@ class FavoritesViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     
     func fetchRechtLocations(){
         let fetchRequest:NSFetchRequest<Location> = NSFetchRequest(entityName: "Location")
