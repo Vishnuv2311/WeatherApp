@@ -14,21 +14,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Loading View Controller-->
-        <scene sceneID="6FN-q2-f9T">
-            <objects>
-                <viewController id="Zf4-yo-55U" customClass="LoadingViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ilH-rE-lxh">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="YAR-n2-tUu"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uX3-uA-KlD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="295" y="-1253"/>
-        </scene>
         <!--Weather App-->
         <scene sceneID="xY0-XE-fpb">
             <objects>
