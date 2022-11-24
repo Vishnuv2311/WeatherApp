@@ -24,19 +24,22 @@ struct WeatherResponse: Codable {
     
     
     func  getWeatherIcon() -> String{
-        if (main.temp < 300) {
+        if(weather?[0].id == nil){
+            return "🤷‍"
+        }
+        else if (weather![0].id! < 300) {
         return "🌩"
-      } else if (main.temp < 400) {
+      } else if (weather![0].id! < 400) {
         return "🌧"
-      } else if (main.temp < 600) {
+      } else if (weather![0].id! < 600) {
         return "☔️";
-      } else if (main.temp < 700) {
+      } else if (weather![0].id! < 700) {
           return "☃️"
-      } else if (main.temp < 800) {
+      } else if (weather![0].id! < 800) {
           return "🌫"
-      } else if (main.temp == 800) {
+      } else if (weather![0].id! == 800) {
           return "☀️"
-      } else if (main.temp <= 804) {
+      } else if (weather![0].id! <= 804) {
           return "☁️"
       } else {
           return "🤷‍"
