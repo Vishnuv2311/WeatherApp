@@ -23,7 +23,6 @@
 		27FAEFC1291FF050006A8CA2 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FAEFC0291FF050006A8CA2 /* WeatherViewController.swift */; };
 		27FAEFC3291FF07A006A8CA2 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FAEFC2291FF07A006A8CA2 /* CityViewController.swift */; };
 		27FAEFC5291FF098006A8CA2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FAEFC4291FF098006A8CA2 /* FavoritesViewController.swift */; };
-		27FAEFC7291FF0C5006A8CA2 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FAEFC6291FF0C5006A8CA2 /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +44,6 @@
 		27FAEFC0291FF050006A8CA2 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		27FAEFC2291FF07A006A8CA2 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		27FAEFC4291FF098006A8CA2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		27FAEFC6291FF0C5006A8CA2 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +113,6 @@
 				27FAEFC0291FF050006A8CA2 /* WeatherViewController.swift */,
 				27FAEFC2291FF07A006A8CA2 /* CityViewController.swift */,
 				27FAEFC4291FF098006A8CA2 /* FavoritesViewController.swift */,
-				27FAEFC6291FF0C5006A8CA2 /* LoadingViewController.swift */,
 				27D6C387292DE089002BED60 /* UIViewController+Ext.swift */,
 			);
 			path = Controller;
@@ -214,7 +211,6 @@
 				27FAEFC3291FF07A006A8CA2 /* CityViewController.swift in Sources */,
 				27FAEFC1291FF050006A8CA2 /* WeatherViewController.swift in Sources */,
 				27FAEFA3291FD817006A8CA2 /* SceneDelegate.swift in Sources */,
-				27FAEFC7291FF0C5006A8CA2 /* LoadingViewController.swift in Sources */,
 				27FAEFC5291FF098006A8CA2 /* FavoritesViewController.swift in Sources */,
 				27FAEFBB291FDE01006A8CA2 /* WeatherApi.swift in Sources */,
 			);
