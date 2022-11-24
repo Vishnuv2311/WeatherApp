@@ -97,11 +97,13 @@ class WeatherViewController: UIViewController ,CLLocationManagerDelegate,CustomL
             self.loadingIndicator.isHidden = true
             if let response = response{
                 self.updateUi(data: response)
-            }else{
-                DispatchQueue.main.async {
-//                    self.showOKAlert(error: error?.localizedDescription)
-                }
             }
+            if let error = error{
+                DispatchQueue.main.async {
+                    self.showOKAlert(title: error.localizedDescription)
+                    
+                }
+                }
         }
     }
     
@@ -121,10 +123,10 @@ class WeatherViewController: UIViewController ,CLLocationManagerDelegate,CustomL
                     
                 }
                 
-            } else {
+            }
+            if let error = error{
                 DispatchQueue.main.async {
-                
-//                    self.showOKAlert(error: error?.localizedDescription)
+                    self.showOKAlert(title: error.localizedDescription)
                     
                 }
                 }
