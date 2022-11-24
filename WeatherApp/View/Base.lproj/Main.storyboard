@@ -284,11 +284,20 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Qlc-Lo-CfA" userLabel="loading">
+                                <rect key="frame" x="164.66666666666666" y="394" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="Kcp-Ln-LUO"/>
+                                    <constraint firstAttribute="height" constant="64" id="Tk1-vX-tg2"/>
+                                </constraints>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SuE-SE-0fN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2iN-NI-tJk" firstAttribute="leading" secondItem="SuE-SE-0fN" secondAttribute="leading" constant="12" id="B4b-N1-bwd"/>
+                            <constraint firstItem="Qlc-Lo-CfA" firstAttribute="centerY" secondItem="wNa-OC-mCp" secondAttribute="centerY" id="JmU-7b-d0M"/>
                             <constraint firstItem="SuE-SE-0fN" firstAttribute="trailing" secondItem="2iN-NI-tJk" secondAttribute="trailing" constant="12" id="KKu-zz-qZp"/>
                             <constraint firstAttribute="trailing" secondItem="Aiv-3K-8a6" secondAttribute="trailing" id="Kfc-sc-BHy"/>
                             <constraint firstItem="Aiv-3K-8a6" firstAttribute="top" secondItem="wNa-OC-mCp" secondAttribute="top" id="RcH-CK-pbD"/>
@@ -296,6 +305,7 @@
                             <constraint firstItem="Aiv-3K-8a6" firstAttribute="leading" secondItem="wNa-OC-mCp" secondAttribute="leading" id="mVA-ZX-uLX"/>
                             <constraint firstItem="2iN-NI-tJk" firstAttribute="top" secondItem="SuE-SE-0fN" secondAttribute="top" constant="24" id="rEc-AO-59w"/>
                             <constraint firstItem="SuE-SE-0fN" firstAttribute="bottom" secondItem="2iN-NI-tJk" secondAttribute="bottom" constant="24" id="sEo-52-hrQ"/>
+                            <constraint firstItem="Qlc-Lo-CfA" firstAttribute="centerX" secondItem="wNa-OC-mCp" secondAttribute="centerX" id="xIv-0a-iuW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Weather App" id="yhM-Pp-vqa">
@@ -312,6 +322,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="humidityTxt" destination="euT-6T-myU" id="8KX-b4-gAw"/>
+                        <outlet property="loadingIndicator" destination="Qlc-Lo-CfA" id="kEs-j7-6QF"/>
                         <outlet property="locationMsgTxt" destination="fXN-Bp-3PH" id="umh-eP-qU4"/>
                         <outlet property="locationTxt" destination="cl1-zm-U6s" id="x0y-rW-1tT"/>
                         <outlet property="maxTempTxt" destination="cHr-Je-V1q" id="vrn-Pp-GU8"/>

@@ -36,6 +36,8 @@ class WeatherViewController: UIViewController ,CLLocationManagerDelegate,CustomL
     
     @IBOutlet weak var weatherMsgTxt: UILabel!
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     var persistentContainer: NSPersistentContainer!
     
     var appDelegate: AppDelegate!
@@ -90,8 +92,9 @@ class WeatherViewController: UIViewController ,CLLocationManagerDelegate,CustomL
     }
     
     func didSelectLocation(location: String) {
+        loadingIndicator.isHidden = false
         WeatherApi.getCityWeather(cityName: location) { response, error in
-            
+            self.loadingIndicator.isHidden = true
             if let response = response{
                 self.updateUi(data: response)
             }else{
@@ -107,15 +110,20 @@ class WeatherViewController: UIViewController ,CLLocationManagerDelegate,CustomL
     
     func fetchCurrentLocationWeather(){
         
+        loadingIndicator.isHidden = false
         
         WeatherApi.getLocationWeather(latitude: userLat, longitude: userLon) { response, error in
+            
+            self.loadingIndicator.isHidden = true
             if let response = response {
                 DispatchQueue.main.async {
                     self.updateUi(data:response)
+                    
                 }
                 
             } else {
                 DispatchQueue.main.async {
+                
 //                    self.showOKAlert(error: error?.localizedDescription)
                     
                 }
