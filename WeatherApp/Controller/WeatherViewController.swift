@@ -57,24 +57,8 @@ class WeatherViewController: UIViewController ,CLLocationManagerDelegate,CustomL
             locationManager.startUpdatingLocation()
         }
         
-    
-
-        // Do any additional setup after loading the view.
     }
     
-    
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     @IBAction func currentLocationPress(_ sender: Any) {
         callOnce = false
@@ -181,15 +165,15 @@ class WeatherViewController: UIViewController ,CLLocationManagerDelegate,CustomL
     //MARK: - Location
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Location error: \(error)")
+        debugPrint("Location error: \(error)")
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if !locations.isEmpty {
             let userLocation: CLLocation = locations[0] as CLLocation
             
-            print("User latitude: \(userLocation.coordinate.latitude)")
-            print("User longitude: \(userLocation.coordinate.longitude)")
+            debugPrint("User latitude: \(userLocation.coordinate.latitude)")
+            debugPrint("User longitude: \(userLocation.coordinate.longitude)")
             
             userLat = userLocation.coordinate.latitude
             userLon = userLocation.coordinate.longitude
